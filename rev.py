@@ -95,5 +95,110 @@ while True:
 # 8 - Desenvolva uma solução que trabalhe com listas e sets para armazenar 
 # nomes de alunos em uma turma. Realize operações como adição, remoção e 
 # verificação de existência de um nome na lista.
-        
-   
+
+# Gerenciamento de alunos em uma turma
+
+def main():
+    # Inicializar lista e set para armazenar os nomes dos alunos
+    lista_alunos = []
+    set_alunos = set()
+
+    while True:
+        print("\n==== Menu de Opções ====")
+        print("1. Adicionar aluno")
+        print("2. Remover aluno")
+        print("3. Verificar se um aluno está na turma")
+        print("4. Exibir todos os alunos")
+        print("5. Sair")
+
+        escolha = input("Escolha uma opção: ")
+
+        if escolha == "1":
+            nome = input("Digite o nome do aluno a ser adicionado: ").strip()
+            if nome in set_alunos:
+                print(f"O aluno {nome} já está na turma.")
+            else:
+                lista_alunos.append(nome)
+                set_alunos.add(nome)
+                print(f"Aluno {nome} adicionado com sucesso.")
+
+        elif escolha == "2":
+            nome = input("Digite o nome do aluno a ser removido: ").strip()
+            if nome in set_alunos:
+                lista_alunos.remove(nome)
+                set_alunos.remove(nome)
+                print(f"Aluno {nome} removido com sucesso.")
+            else:
+                print(f"O aluno {nome} não está na turma.")
+
+        elif escolha == "3":
+            nome = input("Digite o nome do aluno para verificar: ").strip()
+            if nome in set_alunos:
+                print(f"O aluno {nome} está na turma.")
+            else:
+                print(f"O aluno {nome} não está na turma.")
+
+        elif escolha == "4":
+            print("\nLista de alunos na turma:")
+            for aluno in lista_alunos:
+                print(f"- {aluno}")
+
+        elif escolha == "5":
+            print("Saindo do programa. Até logo!")
+            break
+
+        else:
+            print("Opção inválida. Tente novamente.")
+
+if __name__ == "__main__":
+    main()
+
+# Revisão
+# 1 - Desenvolva um programa que altere em tempo de execução a palavra Java pela 
+# palavra Python na frase Exercícios de Java. 
+
+frase = "Exercicio de Java"
+
+frase_alterada = frase.replace("Java", "Python")
+
+print(f'A frase {frase} antes de ser alterada para {frase_alterada}')
+
+
+# 2 - Desenvolva um programa que leia um número inteiro qualquer e que informe se 
+# este número é par ou impar.
+
+numero = int(input("Digite um número por favor: "))
+
+if numero % 2 == 0:
+    print(f'O número {numero} é par')
+elif numero % 2 != 0:
+    print(f'O número {numero} é impar')
+
+
+# 3 - Desenvolva um programa que leia quatro notas e que apresente a média final. 
+
+numero1 = int(input("Digite o primeiro numero: "))
+numero2 = int(input("Digite o segundo número: "))
+numero3 = int(input("Digite o terceiro número: "))
+numero4 = int(input("Digite o quarto número: "))
+
+somatorio = (numero1 + numero2 + numero3 + numero4)
+media = somatorio / 4
+
+print(f'A média da 4 notas é: {media}')
+
+
+soma_notas = 0
+quantidade_notas = 4
+
+print("Por favor digite as 4 notas: ")
+
+for i in range(1, quantidade_notas + 1):
+    nota = float(input(f'Digite a nota {i}: '))
+    soma_notas += nota
+
+
+media_nota = soma_notas / quantidade_notas
+
+
+print(f'A média da nota final é: {media_nota}')
