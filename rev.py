@@ -202,3 +202,123 @@ media_nota = soma_notas / quantidade_notas
 
 
 print(f'A média da nota final é: {media_nota}')
+
+
+# 4 - Desenvolva um programa que leia um número inteiro qualquer e que apresente 
+# o número informado com duas casas decimais.
+
+numero = int(input("Digite um número: "))
+numero_transformado = float(numero)
+
+print(f'O numero digitado {numero} transformado é: {numero_transformado: .2f}')
+
+# 5 - Desenvolva um programa que leia um número inteiro qualquer e que apresete o 
+# número informado, seguido do seu antecessor e do seu sucessor.
+
+numero = int(input("Por favor digite um número: "))
+
+antecessor = numero - 1
+sucessor = numero + 1
+
+print(f'O número digitado é: {numero} e o seu antecessor é: {antecessor} e o seu sucessor é: {sucessor}')
+
+
+# 6 - Desenvolva um programa que armazene quatro notas em uma lista e que 
+# apresente a média final. Caso a média seja igual ou superior a 7, apresentar a 
+# mensagem "APROVADO", caso contrário, armazenar a nota da prova final e 
+# recalcular a média. Caso a nova média seja igual superior a 5, apresentar a 
+# mensagem "APROVADO", caso contrário, apresentar a mensagem 
+# "REPROVADO".
+
+
+quantidade_loop = 4 
+
+soma_numeros = 0
+
+
+for i in range(quantidade_loop):
+    numero = float(input(f"Digite a {i+1}ª nota: "))
+    soma_numeros += numero
+
+media_nota = soma_numeros / quantidade_loop
+
+
+if media_nota >= 7:
+    print("APROVADO")
+else:
+
+    nota_final = float(input("Digite a nota da prova final: "))
+    nova_media = (media_nota + nota_final) / 2
+    
+
+    if nova_media >= 5:
+        print("APROVADO")
+    else:
+        print("REPROVADO")
+
+
+# 7 -  Desenvolva um programa que armazene quatro notas em uma lista e que 
+# apresente: a média final, a maior nota e a menor nota.
+
+notas = []
+for i in range(4):
+    nota = float(input(f'Por digite a nota {i+1}:'))
+    notas.append(nota)
+
+media_notas = sum(notas)/len(notas)
+
+menor_nota = min(notas)
+maior_nota = max(notas)
+
+
+
+print(f'A média da nota é: {media_notas}')
+print(f'A maior nota é: {maior_nota}')
+print(f'A menor nota é: {menor_nota}')
+
+# 8 - Desenvolva um programa que tenha a entrada de um número pelo usuário. Após 
+# entrar com um número, tenha uma função que verifique se um número inteiro 
+# qualquer é par ou impar
+
+def verificar_par_impar(numero):
+    if numero % 2 == 0:
+        return "Número Par"
+    else:
+        return "Número Impar"
+
+numero = int(input("Por favor digite um número: "))
+
+resultado = verificar_par_impar(numero)
+
+print(f'O número digitado {numero} é {resultado}')
+
+
+# 9 - Considere o seguinte dicionário: {'m1': {'m2': 'Olá Mundo'}}. Carregue e 
+# apresente a mensagem "Olá Mundo" contida no dicionário.
+
+dicionario = {'m1': {'m2': 'Olá Mundo'}}
+
+mensagem = dicionario['m1']['m2']
+
+print(mensagem)
+
+
+# 10 - Carregue a data atual do computador e apresente somente a data.
+
+import datetime
+
+data_atual = datetime.datetime.now()
+
+print(data_atual.strftime("%d/%m/%y"))
+
+
+# 11 - Carregue a data atual do computador e, com base na data atual, apresente a 
+# data de dois dias no futuro
+
+import datetime
+
+data_atual = datetime.datetime.now()
+
+dois_dias_futuro = data_atual + datetime.timedelta(days=2)
+
+print(dois_dias_futuro.strftime("%d/%m/%y"))
